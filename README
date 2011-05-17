@@ -1,0 +1,6 @@
+Install:
+git clone git://github.com/adimircolen/vim_files.git
+cd vim_files
+./update_bundles
+ln -s `pwd`/vimrc ~/.vimrc
+
