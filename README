@@ -4,3 +4,10 @@ cd vim_files
 ./update_bundles
 ln -s `pwd`/vimrc ~/.vimrc
 
+Making it so ; works like : for commands.
+Saves typing and eliminates :W style typos due to lazy holding shift.
+
+Search highlighted is enabled.
+Clearing highlighted searches:
+,/
+
