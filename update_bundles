@@ -21,17 +21,17 @@ git_bundles = [
   "git://github.com/tsaleh/vim-tcomment.git",
   "git://github.com/vim-ruby/vim-ruby.git",
   "git://github.com/vim-scripts/Vim-Rspec.git",
-  "git://github.com/vim-scripts/TinyBufferExplorer.git",
-  "git://github.com/mattsoutherden/vim-fuzzyfinder_textmate.git",
+  "git://github.com/vim-scripts/FuzzyFinder.git",
   "git://github.com/tomtom/checksyntax_vim.git",
-  "git://github.com/kchmck/vim-coffee-script.git"
+  "git://github.com/kchmck/vim-coffee-script.git",
+  "git://github.com/altercation/vim-colors-solarized.git"
 ]
 
 vim_org_scripts = [
   ["IndexedSearch", "7062",   "plugin"],
-  #["gist",          "12732", "plugin"],
+  # ["gist",          "12732", "plugin"],
   ["jquery",        "12107",  "syntax"],
-  ["vim-vibrantink",    "1794",   "colors"]
+  ["vim-l9",        "3252",  "plugin"],
 ]
 
 require 'fileutils'
