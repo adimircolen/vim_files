@@ -4,6 +4,14 @@ cd vim_files
 ./update_bundles
 ln -s `pwd`/vimrc ~/.vimrc
 
+FuzzyFinder:
+FuzzyFinder not need install, it works with plugin l9
+Control + t for find a file, with the name or part of the name of file
+Control + b for buffers
+
+OpenUrl:
+open URL under cursor in browser with gG
+
 Making it so ; works like : for commands.
 Saves typing and eliminates :W style typos due to lazy holding shift.
 
