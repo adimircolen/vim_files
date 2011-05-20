@@ -1,12 +1,10 @@
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
 set nocompatible
-
 "runtime! autoload/pathogen.vim
 filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-
 set nobackup                    "without backup of files
 set noswapfile                  "without swap of files
 
@@ -17,7 +15,6 @@ set incsearch                   "find the next match as we type the search
 set hlsearch                    "hilight searches by default
 set nowrap                      "dont wrap lines
 set linebreak                   "wrap lines at convenient points
-
 "indent and tab settings
 "http://version7x.wordpress.com/2010/03/07/was-that-a-tab-or-a-series-of-spaces/
 set tabstop=2
@@ -44,8 +41,8 @@ syntax on                 "turn on syntax highlighting
 set visualbell t_vb=      "disable sound bell
 set hidden                "hidden a buffers, when open a others
 
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 1
+" let g:syntastic_enable_signs = 1
+" let g:syntastic_auto_loc_list = 1
 
 "statusline setup
 set statusline=%f "tail of the filename
@@ -103,7 +100,6 @@ function! StatuslineTrailingSpaceWarning()
     endif
     return b:statusline_trailing_space_warning
 endfunction
-
 
 "return the syntax highlight group under the cursor ''
 function! StatuslineCurrentHighlight()
@@ -207,23 +203,40 @@ if has("gui_running")
         set lines=40
         set columns=115
     endif
-    if has("gui_mac") || has("gui_macvim")
+    if has("mac")
         set guioptions-=T " remove the toolbar
         set transparency=5
         set guifont=Monaco:h12
         set cursorline
-        "color vibrantink
+        set background=light
+        colorscheme solarized
     endif
     if has("gui_win32") || has("gui_win32s")
         set guifont=Consolas:h12
         set enc=utf-8
     endif
 else
+    set background=dark
     "dont load csapprox if we no gui support - silences an annoying warning
     let g:CSApprox_loaded = 1
 endif
 
-
+function! OpenURL(url)
+  if has("win32")
+    exe "!start cmd /cstart /b ".a:url.""
+  elseif $DISPLAY !~ '^\w'
+    exe "silent !sensible-browser \"".a:url."\""
+  else
+    exe "silent !sensible-browser -T \"".a:url."\""
+  endif
+  redraw!
+endfunction
+command! -nargs=1 OpenURL :call OpenURL(<q-args>)
+" open URL under cursor in browser
+nnoremap gb :OpenURL <cfile><CR>
+nnoremap gA :OpenURL http://www.answers.com/<cword><CR>
+nnoremap gG :OpenURL http://www.google.com/search?q=<cword><CR>
+nnoremap gW :OpenURL http://en.wikipedia.org/wiki/Special:Search?search=<cword><CR>
 
 let mapleader = ','   "The default leader is '\', but many people prefer ','
 nnoremap ; :
@@ -231,8 +244,6 @@ nmap <silent> <Leader>p :NERDTreeToggle<CR>
 nmap ,/ :nohlsearch<CR>
 "CheckSyntax
 noremap <Leader><F5> :CheckSyntax<cr>
-"let g:checksyntax_auto = 1
-" let g:tcommentMapLeaderOp2 "define modifier of TComand such as <Leader>
 
-"mark syntax errors with :signs
-"let g:syntastic_enable_signs=1
+map <c-t> :FufCoverageFile<cr>
+map <c-b> :FufBuffer<cr>
