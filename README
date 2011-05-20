@@ -1,21 +1,32 @@
+Easy for add more plugins
+on update_bundle only add a git repo
+or a script file of http://www.vim.org/scripts
+
+
 Install:
-git clone git://github.com/adimircolen/vim_files.git
-cd vim_files
-./update_bundles
-ln -s `pwd`/vimrc ~/.vimrc
+$ git clone git://github.com/adimircolen/vim_files.git
+$ cd vim_files
+$ chmod +x update_bundles
+$ ./update_bundles
+$ ln -s `pwd`/vimrc ~/.vimrc
 
 FuzzyFinder:
 FuzzyFinder not need install, it works with plugin l9
 Control + t for find a file, with the name or part of the name of file
 Control + b for buffers
 
+Tree file:
+,p
+
+Commenting source codes
+on current line         ,__
+next 5 lines            5,__
+
 OpenUrl:
 open URL under cursor in browser with gG
 
 Making it so ; works like : for commands.
-Saves typing and eliminates :W style typos due to lazy holding shift.
 
 Search highlighted is enabled.
 Clearing highlighted searches:
 ,/
-
