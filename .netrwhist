@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/adimircolen/github/vim_teste'
+let g:netrw_dirhist_2='/Users/adimircolen/Projetos/ruby/clubedeautores'
+let g:netrw_dirhist_3='/Users/adimircolen/github/vim_files'
+let g:netrw_dirhist_4='/Users/adimircolen/Projetos/ruby/clubedeautores'
+let g:netrw_dirhist_5='/Users/adimircolen/Projetos/ruby/a2c/cda'
+let g:netrw_dirhist_6='/Users/adimircolen/Projetos/ruby/clubedeautores'
+let g:netrw_dirhist_7='/Users/adimircolen/Projetos/ruby/a2c/walle'
+let g:netrw_dirhist_8='/Users/adimircolen/Projetos/ruby/a2c/clubedeautores'
